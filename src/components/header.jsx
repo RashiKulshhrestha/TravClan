@@ -1,7 +1,30 @@
-import react from "react";
+import React from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import AppBar from "@material-ui/core/AppBar";
+import Toolbar from "@material-ui/core/Toolbar";
+import Typography from "@material-ui/core/Typography";
 
-const Header = () => {
-  return <div>TRAVCLAN</div>;
-};
+const useStyles = makeStyles((theme) => ({
+  root: {
+    flexGrow: 1,
+  },
+  title: {
+    flexGrow: 1,
+  },
+}));
 
-export default Header;
+export default function Header() {
+  const classes = useStyles();
+
+  return (
+    <div className={classes.root}>
+      <AppBar position="sticky">
+        <Toolbar style={{ textAlign: "center" }}>
+          <Typography variant="h4" className={classes.title}>
+            TravClan
+          </Typography>
+        </Toolbar>
+      </AppBar>
+    </div>
+  );
+}

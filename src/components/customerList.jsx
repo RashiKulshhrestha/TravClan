@@ -1,5 +1,6 @@
 import React, { Fragment, useContext } from "react";
-import { CustomerContext } from "./customerContext";
+import CustomerCard from "./CustomerCard";
+import { CustomerContext } from "./CustomerContext";
 import Spinner from "./Spinner";
 
 const CustomerList = () => {
@@ -9,7 +10,7 @@ const CustomerList = () => {
       {!loading ? (
         <Fragment>
           {customerList.map((item) => {
-            return <div>{item.firstname} </div>;
+            return <CustomerCard list={item} />;
           })}
         </Fragment>
       ) : (

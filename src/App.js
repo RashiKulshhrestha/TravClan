@@ -1,17 +1,21 @@
-import logo from "./logo.svg";
-import "./App.css";
-import Header from "./components/header";
-import CustomerList from "./components/customerList";
-import { CustomerProvider } from "./components/customerContext";
+import Header from "./components/Header";
+import CustomerList from "./components/CustomerList";
+import { CustomerProvider } from "./components/CustomerContext";
+import { Route } from "react-router-dom";
+import CustomerBid from "./components/CustomerBid";
+import { BrowserRouter } from "react-router-dom";
 
 function App() {
   return (
-    <CustomerProvider>
-      <div className="App">
+    <div className="App">
+      <BrowserRouter>
         <Header />
-        <CustomerList />
-      </div>
-    </CustomerProvider>
+        <CustomerProvider>
+          <Route path="/user/:id" component={CustomerBid} />
+          <Route exact path="/" component={CustomerList} />
+        </CustomerProvider>
+      </BrowserRouter>
+    </div>
   );
 }
 

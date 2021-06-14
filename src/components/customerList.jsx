@@ -68,35 +68,40 @@ const CustomerList = () => {
       {!loading ? (
         <div>
           <div className="clicktoAction">
-            <FormControl className={classes.formControl}>
-              <InputLabel id="demo-simple-select-label">Sort By</InputLabel>
-              <Select
-                name="sortDropDown"
-                onChange={(e) => {
-                  setSort(parseInt(e.target.value));
-                }}
-                labelId="demo-simple-select-label"
-                id="demo-simple-select"
+            <div>
+              <FormControl
+                className={classes.formControl}
+                style={{ width: "200px" }}
               >
-                <MenuItem value="0">Choose...</MenuItem>
-                <MenuItem value="1">Asc Order</MenuItem>
-                <MenuItem value="2">Desc Order</MenuItem>
-              </Select>
-            </FormControl>
+                <InputLabel id="demo-simple-select-label">Sort By</InputLabel>
+                <Select
+                  name="sortDropDown"
+                  onChange={(e) => {
+                    setSort(parseInt(e.target.value));
+                  }}
+                  labelId="demo-simple-select-label"
+                  id="demo-simple-select"
+                >
+                  <MenuItem value="0">Choose...</MenuItem>
+                  <MenuItem value="1">Asc Order</MenuItem>
+                  <MenuItem value="2">Desc Order</MenuItem>
+                </Select>
+              </FormControl>
+            </div>
+            <div>
+              <Button
+                variant="contained"
+                color="primary"
+                onClick={() => toggleDefaultBid()}
+              >
+                show {defaultBid === "max" ? "min" : "max"} bid
+              </Button>
+            </div>
           </div>
-          <div>
-            <Button
-              variant="contained"
-              color="primary"
-              onClick={() => toggleDefaultBid()}
-            >
-              show {defaultBid === "max" ? "min" : "max"} bid
-            </Button>
-          </div>
-          <Fragment>
+          <div className="customer-list-card">
             <CustomerCard list={getUpdatedlist()} sort={sort} />
-          </Fragment>
-          <div>
+          </div>
+          <div className="customer-list-pagination">
             <Pagination />
           </div>
         </div>

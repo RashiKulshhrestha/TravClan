@@ -7,7 +7,7 @@ export const CustomerProvider = (props) => {
   const [customerList, setCustomerList] = useState([]);
   const [loading, setLoading] = useState(true);
   const [defaultBid, setDefaultBid] = useState("max");
-  const [rowsPerPage, setRowsPerPage] = useState(2);
+  const [rowsPerPage, setRowsPerPage] = useState(3);
   const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {

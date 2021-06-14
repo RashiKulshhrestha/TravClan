@@ -56,12 +56,11 @@ const CustomerCard = ({ list, sort }) => {
       {loading ? (
         <Spinner />
       ) : (
-        <div>
-          {console.log(currentCustomer)}
+        <div className="customer-card-wrapper">
           {currentCustomer.map((item) => {
             return (
-              <Paper elevation={5}>
-                <div className="Customer-card-wrapper" key={item.id}>
+              <Paper elevation={5} className="customer-card-paper">
+                <div key={item.id}>
                   <Avatar
                     src={item.avatarUrl}
                     alt={item.firstname}

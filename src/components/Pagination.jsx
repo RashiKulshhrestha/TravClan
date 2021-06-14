@@ -23,19 +23,23 @@ const Pagination = () => {
     for (var i = 1; i <= totalPages; i++) {
       paginationButton.push(i);
     }
-    console.log(paginationButton);
-    return paginationButton.map((item) => (
-      <Button
-        variant="contained"
-        color="primary"
-        key={item.id}
-        onClick={() => setCurrentPage(item)}
-      >
-        {item}
-      </Button>
-    ));
+    return (
+      <div>
+        <Button>Current Page:{currentPage}</Button>
+        {paginationButton.map((item) => (
+          <Button
+            variant="contained"
+            color="primary"
+            key={item.id}
+            onClick={() => setCurrentPage(item)}
+          >
+            {item}
+          </Button>
+        ))}
+      </div>
+    );
   };
-  return <div>{displayPagination()}</div>;
+  return <div className="pagination-wrapper">{displayPagination()}</div>;
 };
 
 export default Pagination;

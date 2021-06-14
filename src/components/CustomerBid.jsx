@@ -42,35 +42,42 @@ const CustomerBid = ({ match }) => {
       if (selectedCustomer.bids) {
         if (selectedCustomer.bids.length > 0) {
           return (
-            <TableContainer component={Paper}>
-              <Table className={classes.table} aria-label="simple table">
-                <TableHead>
-                  <TableRow>
-                    <TableCell>Car</TableCell>
-                    <TableCell align="right">Amount</TableCell>
-                    <TableCell align="right">Created At</TableCell>
-                  </TableRow>
-                </TableHead>
-                <TableBody>
-                  {console.log(selectedCustomer.bids)}
-                  {selectedCustomer.bids.map((list) => {
-                    return (
-                      <TableRow key={list.id}>
-                        <TableCell component="th" scope="row">
-                          {list.carTitle}
-                        </TableCell>
-                        <TableCell align="right">{list.amount}</TableCell>
-                        <TableCell align="right">
-                          {getCreatedTime(list.created)}
-                        </TableCell>
-                      </TableRow>
-                    );
-                  })}
-                </TableBody>
-              </Table>
-            </TableContainer>
+            <div className="customer-bid-table">
+              <TableContainer component={Paper}>
+                <Table className={classes.table} aria-label="a dense table">
+                  <TableHead>
+                    <TableRow>
+                      <TableCell>
+                        <strong>Car</strong>
+                      </TableCell>
+                      <TableCell align="right">
+                        <strong>Amount</strong>
+                      </TableCell>
+                      <TableCell align="right">
+                        <strong>Created At</strong>
+                      </TableCell>
+                    </TableRow>
+                  </TableHead>
+                  <TableBody>
+                    {console.log(selectedCustomer.bids)}
+                    {selectedCustomer.bids.map((list) => {
+                      return (
+                        <TableRow key={list.id}>
+                          <TableCell component="th" scope="row">
+                            {list.carTitle}
+                          </TableCell>
+                          <TableCell align="right">{list.amount}</TableCell>
+                          <TableCell align="right">
+                            {getCreatedTime(list.created)}
+                          </TableCell>
+                        </TableRow>
+                      );
+                    })}
+                  </TableBody>
+                </Table>
+              </TableContainer>
+            </div>
           );
-          return;
         } else {
           return <div>No Data Found</div>;
         }
@@ -82,7 +89,7 @@ const CustomerBid = ({ match }) => {
     }
   };
   return (
-    <div>
+    <div className="customer-bid-wrapper">
       <GetBids />
     </div>
   );

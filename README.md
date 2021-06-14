@@ -20,11 +20,7 @@ but not necessarily limited to it.
 2. Clicking on any row should redirect to a separate url where all the
    selected customer's bids should be displayed. (use your creativity on
    how to display the data).
-3. Styling is not a priority but using Material Ui(https://materialui.com) entirely will be a plus.
-
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+3. Styling is not a priority but using Material Ui entirely will be a plus.
 
 ## Available Scripts
 

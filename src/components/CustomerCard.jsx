@@ -1,6 +1,6 @@
-import { Avatar, FormLabel, ListItemText, Paper } from "@material-ui/core";
+import { Avatar, FormLabel, Paper } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import react, { Fragment, useContext } from "react";
+import react, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { CustomerContext } from "./CustomerContext";
 import Spinner from "./Spinner";

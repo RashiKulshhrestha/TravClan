@@ -9,6 +9,7 @@ import {
 import React, { Fragment, useContext, useState } from "react";
 import CustomerCard from "./CustomerCard";
 import { CustomerContext } from "./CustomerContext";
+import Pagination from "./Pagination";
 import Spinner from "./Spinner";
 
 const useStyles = makeStyles((theme) => ({
@@ -95,6 +96,9 @@ const CustomerList = () => {
           <Fragment>
             <CustomerCard list={getUpdatedlist()} sort={sort} />
           </Fragment>
+          <div>
+            <Pagination />
+          </div>
         </div>
       ) : (
         <Spinner />
